@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="5KuBGZz5TYEToMQWjkttCB">
+<head data-page-node-id="E7oSic1tLj5RSN1lgHASrD">
+<meta charset="utf-8" data-page-node-id="GbbzEHMh6L1slvkhAMWBmv">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" data-page-node-id="eVA9rTtaR9eGurYiSueBM2">
+<meta name="format-detection" content="telephone=no" data-page-node-id="vl4Kdq5xootECaZ9DMfa6u">
+<meta name="theme-color" content="#4F46E5" data-page-node-id="b3h8CDkpB9EwoJSktTLXtB">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" data-page-node-id="ybwVnvuBACJ42auDR7iKTb">
+<title>高一10/12/13班 课表</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
+background:#F4F5F9;color:#1F2430;font-size:15px;line-height:1.5;padding-bottom:28px;
+-webkit-text-size-adjust:100%;}
+.wrap{max-width:520px;margin:0 auto;padding:0 10px;}
+.hd{background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;padding:16px 14px 14px;border-radius:0 0 18px 18px;
+margin:0 -10px 12px;box-shadow:0 4px 16px rgba(79,70,229,.22);}
+.hd .sch{font-size:12px;opacity:.85;letter-spacing:.5px;}
+.hd .big{font-size:25px;font-weight:700;margin:5px 0 3px;letter-spacing:.5px;}
+.hd .sub{font-size:13px;opacity:.92;}
+.hd .now{display:inline-block;margin-top:9px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);
+padding:4px 11px;border-radius:20px;font-size:12.5px;}
+.nav{display:flex;gap:7px;margin-bottom:11px;align-items:center;}
+.btn{flex:1;text-align:center;background:#fff;border:1px solid #E3E5EE;border-radius:11px;padding:11px 4px;
+font-size:14px;color:#4F46E5;font-weight:600;cursor:pointer;}
+.btn:active{background:#EEF0FF;}
+.btn.gray{color:#8A90A2;font-weight:500;}
+.sel{flex:1.5;height:41px;border:1px solid #E3E5EE;border-radius:11px;background:#fff;color:#1F2430;
+font-size:14px;padding:0 8px;font-family:inherit;}
+.card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 2px 10px rgba(28,32,50,.06);margin-bottom:12px;}
+.card h3{font-size:14px;font-weight:700;padding:11px 13px;border-bottom:1px solid #F0F1F6;color:#4F46E5;display:flex;
+justify-content:space-between;align-items:center;}
+.card h3 .tag{font-size:11px;font-weight:500;color:#8A90A2;}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}
+th,td{padding:8px 2px;text-align:center;border-bottom:1px solid #F2F3F8;}
+th{background:#FAFAFD;font-size:12px;color:#8A90A2;font-weight:600;}
+th.c{color:#4F46E5;}
+td.pd{color:#6B7280;font-size:12.5px;white-space:nowrap;}
+td.pd b{display:block;font-weight:600;color:#1F2430;font-size:13px;}
+td.pd i{font-style:normal;font-size:10.5px;color:#A0A5B5;}
+td.sub{font-weight:600;font-size:13.5px;}
+td.ch{background:#F5F3FF;color:#7C3AED;font-weight:700;}
+tr.cur td{background:#FFF8E6;}
+tr.cur td.ch{background:#F3EDFF;}
+tr:last-child td{border-bottom:none;}
+.legend{padding:9px 13px;font-size:11.5px;color:#8A90A2;display:flex;gap:13px;flex-wrap:wrap;}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px;}
+details{background:#fff;border-radius:15px;margin-bottom:12px;box-shadow:0 2px 10px rgba(28,32,50,.06);overflow:hidden;}
+summary{padding:12px 13px;font-size:14px;font-weight:700;color:#4F46E5;cursor:pointer;list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary:before{content:"▸ ";color:#A0A5B5;}
+details[open] summary:before{content:"▾ ";}
+.dbody{padding:0 8px 10px;}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.mth{width:100%;border-collapse:collapse;font-size:12px;}
+.mth th{padding:5px 0;color:#8A90A2;font-size:11px;}
+.mth td{padding:5px 0;text-align:center;border-bottom:1px solid #F5F6FA;}
+.mth td .d{font-weight:600;font-size:13px;}
+.mth td .c{font-size:9.5px;color:#7C3AED;}
+.mth td.tdy{background:#4F46E5;color:#fff;border-radius:7px;}
+.mth td.tdy .c{color:#E0E7FF;}
+.mth td.off{color:#D5D8E2;}
+.ft{text-align:center;font-size:11.5px;color:#A0A5B5;padding:6px 0 2px;line-height:1.7;}
+.sw{font-size:11px;color:#7C3AED;display:inline-block;margin-left:6px;}
+</style>
+</head>
+<body data-page-node-id="v5XqtxLwRcVNv9j5DrRKNb">
+<div class="wrap" data-page-node-id="90lRMTBHNnZABE1f3hcFVP">
+  <div class="hd" data-page-node-id="902P1b6CAQwQXQBSn65ixw">
+    <div class="sch" id="sch" data-page-node-id="0CZci4L4zOYUUs2yOlxGCh"></div>
+    <div class="big" id="big" data-page-node-id="PAfito6rnjC98pWljGEups">加载中…</div>
+    <div class="sub" id="sub" data-page-node-id="aaE8o8ei1VXXdqXy87s1Yj"></div>
+    <div class="now" id="now" data-page-node-id="hzS06miCSeeS1XKgVfCHBs"></div>
+  </div>
+
+  <div class="nav" data-page-node-id="ZXetpJGCuTAX23GlnEwSVK">
+    <div class="btn gray" id="prev" data-page-node-id="AcHm7lF11QIkQiYpDstAgJ">‹ 前一天</div>
+    <select class="sel" id="pick" data-page-node-id="OrvsIBygfHDrFzEtUIDCvA"></select>
+    <div class="btn gray" id="next" data-page-node-id="52abM6zdCbsrve5tG1yUGM">后一天 ›</div>
+  </div>
+  <div class="nav" style="margin-top:-4px;" data-page-node-id="xKBLkD79wuvgqHIIqRDYkf">
+    <div class="btn" id="today" data-page-node-id="r8MI85c7EC7l7GeOEy8dwf">📍 回到今天</div>
+  </div>
+
+  <div class="card" data-page-node-id="ROPzzmO4lxEeNZ3GbixE9F">
+    <h3 data-page-node-id="vlTxRjAQjQSj6FODBZVjFA"><span id="ttl" data-page-node-id="SflmU7CXErumyjT8USIsN3">今日课表</span><span class="tag" id="cnt" data-page-node-id="x81FE4vVUQ0G6SSLx3QiIb"></span></h3>
+    <table id="tb" data-page-node-id="K7rmV0Bu2ZXPFlscwCFqiw"></table>
+    <div class="legend" data-page-node-id="COHwe8i6Ddo1aAJdnorm8D">
+      <span data-page-node-id="HmwoDYFpq7DtOn8QhC7z8G"><i style="background:#7C3AED" data-page-node-id="pluAes3ZXNCytwbgVxVDm3"></i>化学（重点）</span>
+      <span data-page-node-id="t5nti8uNEPZeBGJPxuC0Q3"><i style="background:#FFF8E6;border:1px solid #F3E4B8" data-page-node-id="oN0BHAOu7X9YPACCgBODLV"></i>当前时段</span>
+    </div>
+  </div>
+
+  <details data-page-node-id="9q8SRJQZQqH7iAA2O0InZD">
+    <summary data-page-node-id="CwuKlsJF9DjIFP5N6eYCWb">📅 日期对照（哪天是大周第几天）</summary>
+    <div class="dbody" data-page-node-id="SRyspmZDuokc3X4DakvE61"><div id="cal" data-page-node-id="KoSzErvB1T8H1emuuAfspB"></div></div>
+  </details>
+
+  <details data-page-node-id="szDxCekkJsbOlCdxme6wW5">
+    <summary data-page-node-id="SBvH2YAozlTh5VIeaIjQ3l">📋 完整 14 天总表</summary>
+    <div class="dbody" data-page-node-id="sd1c2B7r4nXNGAFXmU4wkQ"><div class="scroll" id="full" data-page-node-id="3DewHd61zA3QD4b760iiT4"></div></div>
+  </details>
+
+  <div class="ft" data-page-node-id="L6Qq0kbsgMP42oS4zcTCBh">
+    数据来自《罗州城高级中学2026年秋高一课程总表》<br data-page-node-id="zAAL5DONyGSqqwrt0JR2Tg">
+    14 天一个大周 · 9/2 = 星期三 · 每天 11 个时段<br data-page-node-id="9224hmTCgwlAqFoG2NRDgA">
+    <span style="color:#7C3AED" data-page-node-id="Zyaum89P2bUA3BbmLzqWup">微信里点右上角「···」可收藏 / 添加到桌面</span>
+  </div>
+</div>
+
+<script>
+var DATA = {"school":"罗州城高级中学","title":"2026年秋高一课程总表","periods":["早自习","第1节","第2节","第3节","第4节","第5节","第6节","第7节","第8节","晚1","晚2"],"times":["07:20","08:00","08:55","10:00","10:55","14:00","14:55","16:00","16:55","19:00","20:00"],"dayNames":["星期一","星期二","星期三","星期四","星期五","星期六","星期七","星期八","星期九","星期十","星期十一","星期十二","十三","十四"],"classes":[10,12,13],"grid":{"0_10":["语文","化学","数学","历史","生物","英语","物理","语文","语文","英语","英语"],"0_12":["语文","物理","英语","数学","生物","地理","化学","语文","语文","英语","英语"],"0_13":["语文","英语","语文","生物","物理","化学","数学","历史","政治","英语","英语"],"1_10":["英语","化学","语文","数学","数学","生物","物理","英语","英语","数学","物理"],"1_12":["英语","英语","英语","化学","语文","数学","数学","物理","生物","数学","物理"],"1_13":["英语","数学","数学","语文","化学","物理","生物","英语","英语","物理","数学"],"2_10":["语文","化学","英语","生物","地理","政治","数学","物理","语文","数学","数学"],"2_12":["语文","心理","英语","生物","化学","物理","历史","数学","语文","数学","数学"],"2_13":["语文","英语","化学","地理","生物","语文","语文","数学","物理","数学","数学"],"3_10":["英语","语文","语文","物理","英语","数学","数学","心理","化学","语文","语文"],"3_12":["英语","语文","语文","英语","物理","化学","美术","数学","数学","语文","语文"],"3_13":["英语","数学","数学","物理","英语","语文","语文","化学","心理","语文","语文"],"4_10":["语文","数学","数学","化学","语文","英语","英语","物理","生物","数学","物理"],"4_12":["语文","生物","物理","数学","数学","化学","语文","英语","英语","数学","物理"],"4_13":["语文","英语","英语","数学","数学","语文","化学","物理","生物","物理","数学"],"5_10":["英语","语文","语文","体育","生物","英语","英语","信息技术","历史","生物","生物"],"5_12":["英语","音乐","历史","语文","语文","政治","生物","英语","英语","生物","生物"],"5_13":["英语","英语","英语","生物","体育","美术","历史","语文","语文","生物","生物"],"6_10":["英语","化学","政治","美术","地理","数学","数学","物理","物理","化学","化学"],"6_12":["英语","政治","化学","物理","物理","地理","体育","数学","数学","化学","化学"],"6_13":["英语","数学","数学","信息技术","化学","历史","地理","物理","物理","化学","化学"],"7_10":["英语","语文","语文","数学","数学","英语","英语","物理","音乐","物理","物理"],"7_12":["英语","英语","英语","数学","数学","历史","物理","语文","政治","物理","物理"],"7_13":["英语","音乐","政治","语文","语文","物理","英语","数学","数学","物理","物理"],"8_10":["语文","化学","体育","英语","历史","数学","数学","语文","物理","化学","英语"],"8_12":["语文","语文","化学","数学","数学","英语","物理","体育","地理","化学","英语"],"8_13":["语文","数学","数学","语文","化学","体育","英语","地理","物理","化学","英语"],"9_10":["英语","英语","化学","物理","政治","历史","语文","生物","数学","数学","数学"],"9_12":["英语","化学","物理","英语","生物","信息技术","语文","体育","数学","数学","数学"],"9_13":["英语","生物","英语","化学","物理","语文","生物","数学","政治","数学","数学"],"10_10":["语文","数学","数学","物理","英语","生物","语文","语文","地理","物理","数学"],"10_12":["语文","物理","政治","数学","数学","语文","英语","化学","生物","数学","物理"],"10_13":["语文","语文","语文","历史","化学","英语","物理","数学","数学","物理","数学"],"11_10":["英语","数学","数学","物理","体育","英语","英语","生物","语文","语文","生物"],"11_12":["英语","英语","英语","数学","数学","语文","生物","物理","化学","生物","语文"],"11_13":["英语","物理","生物","数学","数学","英语","语文","化学","体育","语文","生物"],"12_10":["语文","化学","化学","","","","","","","",""],"12_12":["语文","语文","语文","","","","","","","",""],"12_13":["语文","英语","英语","","","","","","","",""],"13_10":["","","","","","","","","","物理","数学"],"13_12":["","","","","","","","","","物理","数学"],"13_13":["","","","","","","","","","数学","物理"]},"anchor":{"date":"2026-09-02","dayIndex":2},"cycle":14};
+var PERIODS = DATA.periods, TIMES = DATA.times, DAYNAMES = DATA.dayNames,
+    CLASSES = DATA.classes, GRID = DATA.grid, ANCHOR = DATA.anchor, CYCLE = DATA.cycle;
+
+function pad(n){ return n < 10 ? '0' + n : '' + n; }
+function ds(d){ return d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate()); }
+function parseD(s){ var a = s.split('-'); return new Date(+a[0], +a[1]-1, +a[2]); }
+function addDays(d, n){ var x = new Date(d.getTime()); x.setDate(x.getDate()+n); return x; }
+function dayIdx(s){
+  var a = parseD(ANCHOR.date), b = parseD(s);
+  var diff = Math.round((b - a) / 86400000);
+  return ((ANCHOR.dayIndex + diff) % CYCLE + CYCLE) % CYCLE;
+}
+function weekName(d){ return ['周日','周一','周二','周三','周四','周五','周六'][d.getDay()]; }
+
+// 时段判定
+function nowPeriodIdx(){
+  var n = new Date(), t = n.getHours()*60 + n.getMinutes();
+  var st = [440,480,535,600,655,840,895,960,1015,1140,1200];
+  var en = [470,525,580,645,700,885,940,1005,1060,1190,1250];
+  for (var i = 0; i < st.length; i++){ if (t >= st[i] && t < en[i]) return i; }
+  return -1;
+}
+
+var cur = ds(new Date());
+
+function cellOf(di, c, p){
+  var row = GRID[di + '_' + c];
+  return (row && row[p]) ? row[p] : '';
+}
+
+function render(){
+  var di = dayIdx(cur);
+  var dt = parseD(cur);
+  var isToday = (cur === ds(new Date()));
+
+  document.getElementById('sch').textContent = DATA.school + ' · 高一';
+  document.getElementById('big').textContent = (dt.getMonth()+1) + '月' + dt.getDate() + '日 ' + weekName(dt);
+  document.getElementById('sub').textContent = DAYNAMES[di] + '（大周第 ' + (di+1) + ' 天 / 共 ' + CYCLE + ' 天）'
+      + (isToday ? '' : '　·　非今天');
+
+  var np = isToday ? nowPeriodIdx() : -1;
+  var nowEl = document.getElementById('now');
+  if (isToday){
+    var nn = new Date();
+    nowEl.textContent = '🕐 ' + pad(nn.getHours()) + ':' + pad(nn.getMinutes())
+      + '　' + (np >= 0 ? ('当前：' + PERIODS[np]) : '课间 / 休息');
+  } else {
+    nowEl.textContent = '📌 正在查看 ' + (dt.getMonth()+1) + '/' + dt.getDate() + ' 的课表';
+  }
+
+  document.getElementById('ttl').textContent = (isToday ? '今日课表' : (dt.getMonth()+1) + '/' + dt.getDate() + ' 课表');
+
+  // 表格
+  var h = '<tr><th style="width:23%">时段</th>';
+  for (var i = 0; i < CLASSES.length; i++) h += '<th class="c">' + CLASSES[i] + '班</th>';
+  h += '</tr>';
+
+  var chem = 0, tot = 0;
+  for (var p = 0; p < PERIODS.length; p++){
+    h += '<tr' + (p === np ? ' class="cur"' : '') + '>';
+    h += '<td class="pd"><b>' + PERIODS[p] + '</b><i>' + TIMES[p] + '</i></td>';
+    for (var j = 0; j < CLASSES.length; j++){
+      var s = cellOf(di, CLASSES[j], p);
+      if (s) tot++;
+      if (s === '化学') chem++;
+      h += '<td class="' + (s === '化学' ? 'ch' : 'sub') + '">' + (s ? (s === '化学' ? '🧪' + s : s) : '—') + '</td>';
+    }
+    h += '</tr>';
+  }
+  document.getElementById('tb').innerHTML = h;
+  document.getElementById('cnt').textContent = tot + ' 节 · 化学 ' + chem + ' 节';
+
+  renderCal(di);
+  renderFull(di);
+}
+
+// 日期对照：显示前后 1 个月
+function renderCal(di){
+  var dt = parseD(cur);
+  var first = new Date(dt.getFullYear(), dt.getMonth(), 1);
+  var start = addDays(first, -((first.getDay()+6) % 7)); // 周一起
+  var h = '<table class="mth"><tr>';
+  var wn = ['一','二','三','四','五','六','日'];
+  for (var i = 0; i < 7; i++) h += '<th>' + wn[i] + '</th>';
+  h += '</tr>';
+  var todayStr = ds(new Date());
+  for (var w = 0; w < 6; w++){
+    h += '<tr>';
+    for (var k = 0; k < 7; k++){
+      var d = addDays(start, w*7 + k);
+      var s = ds(d);
+      var idx = dayIdx(s);
+      var cls = [];
+      if (s === todayStr) cls.push('tdy');
+      else if (d.getMonth() !== dt.getMonth()) cls.push('off');
+      h += '<td class="' + cls.join(' ') + '" data-d="' + s + '"><div class="d">' + d.getDate()
+         + '</div><div class="c">' + (idx+1) + '</div></td>';
+    }
+    h += '</tr>';
+  }
+  h += '</table><div class="ft" style="text-align:left;padding:6px 2px 0">格子内：<b>大字 = 日期</b>，'
+     + '<b style="color:#7C3AED">紫色小字 = 大周第几天</b>｜点日期可跳转</div>';
+  var el = document.getElementById('cal');
+  el.innerHTML = h;
+  var tds = el.getElementsByTagName('td');
+  for (var t = 0; t < tds.length; t++){
+    (function(td){
+      td.onclick = function(){ cur = td.getAttribute('data-d'); syncSel(); render(); };
+    })(tds[t]);
+  }
+}
+
+// 完整总表
+function renderFull(di){
+  var h = '<table style="min-width:100%"><tr><th style="min-width:52px">时段</th>';
+  for (var d = 0; d < CYCLE; d++){
+    h += '<th style="min-width:34px' + (d === di ? ';background:#EEF0FF;color:#4F46E5' : '') + '">'
+       + DAYNAMES[d].replace('星期','') + '</th>';
+  }
+  h += '</tr>';
+  var curCls = CLASSES[0];
+  for (var p = 0; p < PERIODS.length; p++){
+    h += '<tr><td class="pd" style="font-size:11.5px">' + PERIODS[p] + '</td>';
+    for (var d2 = 0; d2 < CYCLE; d2++){
+      var s = cellOf(d2, curCls, p);
+      var st = d2 === di ? ' style="background:#F7F8FF"' : '';
+      h += '<td class="' + (s === '化学' ? 'ch' : 'sub') + '"' + st + '>' + (s || '·') + '</td>';
+    }
+    h += '</tr>';
+  }
+  h += '</table>';
+  h += '<div class="nav" style="margin:9px 0 0">';
+  for (var i = 0; i < CLASSES.length; i++){
+    h += '<div class="btn' + (CLASSES[i] === curCls ? '' : ' gray') + '" data-c="' + CLASSES[i] + '">'
+       + CLASSES[i] + '班</div>';
+  }
+  h += '</div>';
+  var el = document.getElementById('full');
+  el.innerHTML = h;
+  var bs = el.getElementsByTagName('div');
+  for (var b = 0; b < bs.length; b++){
+    if (!bs[b].getAttribute('data-c')) continue;
+    (function(btn){
+      btn.onclick = function(){ curCls = parseInt(btn.getAttribute('data-c'), 10); render(); };
+    })(bs[b]);
+  }
+}
+
+// 日期选择器
+function syncSel(){
+  var el = document.getElementById('pick');
+  el.value = cur;
+}
+(function initSel(){
+  var el = document.getElementById('pick'), h = '';
+  var today = new Date();
+  for (var i = -30; i <= 90; i++){
+    var d = addDays(today, i);
+    var s = ds(d);
+    h += '<option value="' + s + '">' + (d.getMonth()+1) + '/' + d.getDate() + ' '
+       + weekName(d) + ' ' + DAYNAMES[dayIdx(s)] + (i === 0 ? '（今天）' : '') + '</option>';
+  }
+  el.innerHTML = h;
+  el.value = cur;
+})();
+
+document.getElementById('prev').onclick = function(){ cur = ds(addDays(parseD(cur), -1)); syncSel(); render(); };
+document.getElementById('next').onclick = function(){ cur = ds(addDays(parseD(cur), 1)); syncSel(); render(); };
+document.getElementById('today').onclick = function(){ cur = ds(new Date()); syncSel(); render(); };
+document.getElementById('pick').onchange = function(){ cur = this.value; render(); };
+
+render();
+
+// 轻量定时：只刷时钟 + 当前时段高亮，不重绘整表（避免展开的总表丢失滚动位置）
+var lastDay = ds(new Date());
+setInterval(function(){
+  var t = ds(new Date());
+  // 跨天：若用户停在"昨天"，自动跟到新的一天
+  if (t !== lastDay){
+    var y = ds(addDays(parseD(t), -1));
+    if (cur === y || cur === ds(parseD(lastDay))){ cur = t; syncSel(); render(); }
+    lastDay = t;
+    return;
+  }
+  if (cur !== t) return;
+  var np = nowPeriodIdx(), nn = new Date();
+  var el = document.getElementById('now');
+  if (el) el.textContent = '🕐 ' + pad(nn.getHours()) + ':' + pad(nn.getMinutes())
+        + '　' + (np >= 0 ? ('当前：' + PERIODS[np]) : '课间 / 休息');
+  var trs = document.getElementById('tb').getElementsByTagName('tr');
+  for (var i = 1; i < trs.length; i++) trs[i].className = (i - 1 === np) ? 'cur' : '';
+}, 30000);
+</script>
+</body>
+</html>
