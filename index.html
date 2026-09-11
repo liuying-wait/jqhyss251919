@@ -63,39 +63,19 @@ details[open] summary:before{content:"▾ ";}
 .ft{text-align:center;font-size:11.5px;color:#A0A5B5;padding:6px 0 2px;line-height:1.7;}
 .sw{font-size:11px;color:#7C3AED;display:inline-block;margin-left:6px;}
 .ecard{background:#fff;border:1px solid #ECEEF6;border-radius:12px;margin:8px 0;overflow:hidden;}
-.ecard .ehd{background:#F5F6FB;padding:7px 11px;font-size:13px;font-weight:700;color:#4F46E5;
-display:flex;justify-content:space-between;align-items:center;}
-.ecard .ehd span{font-size:11px;font-weight:500;color:#8A90A2;}
 .etb{width:100%;border-collapse:collapse;font-size:12.5px;}
 .etb th{padding:5px 2px;background:#FAFAFD;color:#8A90A2;font-size:11px;font-weight:600;}
 .etb th.c{color:#4F46E5;}
 .etb td{padding:3px 2px;text-align:center;border-bottom:1px solid #F5F6FA;}
-.etb td.pd{font-size:11px;color:#6B7280;white-space:nowrap;}
 .esel{width:100%;height:32px;border:1px solid #E3E5EE;border-radius:8px;background:#fff;color:#1F2430;
 font-size:12.5px;font-family:inherit;padding:0 2px;-webkit-appearance:none;appearance:none;
 text-align:center;text-align-last:center;}
 .esel.chem{background:#F5F3FF;color:#7C3AED;font-weight:700;border-color:#DDD2F5;}
 .edbar{display:flex;gap:6px;margin:9px 0 4px;flex-wrap:wrap;}
-.edbar .btn{flex:1;min-width:84px;font-size:13px;padding:9px 4px;}
+.edbar .btn{flex:1;min-width:84px;font-size:13px;padding:10px 4px;}
 .edbar .btn.pri{background:#4F46E5;color:#fff;border-color:#4F46E5;}
-.edbar .btn.warn{color:#B45309;}
-#edtip{font-size:11.5px;color:#16A34A;padding:2px 2px 7px;}
-.ednote{font-size:11.5px;color:#8A90A2;line-height:1.75;padding:5px 2px 3px;}
-.hbox{border:1px solid #ECEEF6;border-radius:11px;overflow:hidden;margin:2px 0 4px;}
-.hitem{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;
-border-bottom:1px solid #F2F3F8;background:#fff;}
-.hitem:last-child{border-bottom:none;}
-.hmeta{display:flex;flex-direction:column;gap:1px;min-width:0;}
-.hmeta b{font-size:12.5px;color:#1F2430;font-weight:600;}
-.hmeta b .autotag{font-size:10px;font-weight:500;color:#8A90A2;background:#F2F3F8;
-border-radius:4px;padding:1px 4px;margin-left:4px;}
-.hmeta span{font-size:11px;color:#8A90A2;}
-.hact{display:flex;gap:6px;flex-shrink:0;}
-.hbtn{font-size:11.5px;padding:5px 11px;border-radius:7px;border:1px solid #E3E5EE;
-color:#4F46E5;background:#fff;cursor:pointer;}
-.hbtn:active{background:#EEF0FF;}
-.hbtn.del{color:#B91C1C;border-color:#F3D6D6;}
-.edempty{font-size:11.5px;color:#A0A5B5;padding:11px 6px;text-align:center;line-height:1.7;}
+.ednote{font-size:11.5px;color:#8A90A2;line-height:1.8;padding:4px 2px 3px;}
+.ednote b{color:#6B7280;}
 .cbox{border:1px solid #E0E7FF;background:#F7F9FF;border-radius:12px;padding:10px 11px;margin:8px 0 4px;}
 .ctip{font-size:11.5px;color:#4F46E5;padding:0 0 8px;line-height:1.65;word-break:break-all;}
 .cpanel{display:none;padding-top:2px;}
@@ -112,6 +92,10 @@ font-size:12.5px;font-family:inherit;background:#fff;color:#1F2430;box-sizing:bo
 color:#4F46E5;font-size:14px;background:#fff;cursor:pointer;box-sizing:border-box;
 user-select:none;-webkit-user-select:none;}
 .cnav:active{background:#EEF0FF;}
+#edInfo{font-size:11.5px;color:#16A34A;line-height:1.75;padding:2px 2px 6px;}
+#edInfo.warn{color:#D97706;}
+#edInfo.err{color:#B91C1C;}
+.admintag{font-size:11px;font-weight:500;color:#8A90A2;}
 
 </style>
 </head>
@@ -152,53 +136,48 @@ user-select:none;-webkit-user-select:none;}
     <div class="dbody" data-page-node-id="sd1c2B7r4nXNGAFXmU4wkQ"><div class="scroll" id="full" data-page-node-id="3DewHd61zA3QD4b760iiT4"></div></div>
   </details>
 
-  <details id="editDet" data-page-node-id="editmap01">
-    <summary>✏️ 编辑课表（改这 14 天，其余自动循环）</summary>
+  <details id="adminDet" style="display:none">
+    <summary>⚙️ 管理面板 <span class="admintag">（上传课表用，普通浏览不需要）</span></summary>
     <div class="dbody">
       <div class="ednote">
-        · 只需修改下面这 <b>14 天</b>（一个大周），其他日期会自动按这个循环套用，<b>不用逐天改</b>。<br>
-        · 改完 <b>立刻自动保存到本机</b>，上面的课表同步更新。<br>
-        · 要让<b>手机微信 / QQ</b> 看到，改完点 <b>「☁️ 保存到云端」</b>（需先做一次设置）。
+        <b>怎么更新课表：</b><br>
+        1️⃣ 先配好云同步（<b>只需做一次</b>）→ 2️⃣ 选一份课表文件 → 3️⃣ 点「上传到云端」<br>
+        上传成功后，<b>所有打开这个网址的人刷新即可看到新课表</b>，他们不需要做任何操作。
       </div>
+
       <div class="cbox">
         <div id="ctip" class="ctip"></div>
         <div class="edbar">
-          <div class="btn pri" id="cPush">☁️ 保存到云端</div>
-          <div class="btn" id="cCfg">⚙️ 设置</div>
+          <div class="btn" id="cCfg">⚙️ 云同步设置</div>
         </div>
         <div id="cPanel" class="cpanel">
           <div class="crow"><label>仓库 owner</label><input id="fOwner" placeholder="例如 liuying-wait" autocapitalize="off" autocorrect="off" spellcheck="false"></div>
           <div class="crow"><label>仓库名</label><input id="fRepo" placeholder="例如 jqhyss251919" autocapitalize="off" autocorrect="off" spellcheck="false"></div>
-          <div class="crow"><label>分支</label><input id="fBranch" placeholder="main" autocapitalize="off" autocorrect="off" spellcheck="false"></div>
+          <div class="crow"><label>分支</label><input id="fBranch" placeholder="main（不确定就留空）" autocapitalize="off" autocorrect="off" spellcheck="false"></div>
           <div class="crow"><label>文件路径</label><input id="fPath" placeholder="schedule.json" autocapitalize="off" autocorrect="off" spellcheck="false"></div>
-          <div class="crow"><label>Token</label><input id="fToken" type="password" placeholder="github_pat_..." autocapitalize="off" autocorrect="off" spellcheck="false"></div>
+          <div class="crow"><label>Token</label><input id="fToken" type="password" placeholder="ghp_... 或 github_pat_..." autocapitalize="off" autocorrect="off" spellcheck="false"></div>
           <div class="edbar">
             <div class="btn pri" id="fSave">保存设置</div>
             <div class="btn gray" id="fClear">清除</div>
           </div>
           <div class="cnhelp">
-            <b>Token 怎么拿：</b>GitHub → 头像 → Settings → Developer settings →
-            Personal access tokens → <b>Fine-grained tokens</b> → Generate new token。<br>
-            权限只开 <b>Contents: Read and write</b>，仓库 Repository access 只勾选这一个仓库。<br>
-            Token 只保存在你本机浏览器里，不会上传到任何地方。
+            <b>Token 怎么拿：</b>打开 github.com/settings/tokens → Generate new token → 选 <b>(classic)</b>
+            → Select scopes 里<b>只勾最上面的 repo</b> → Generate → 复制 <code>ghp_…</code>。<br>
+            Token 只保存在你这台设备的浏览器里，不会上传到任何地方。
           </div>
         </div>
       </div>
-      <div id="edtip">✔ 已就绪</div>
+
       <div class="edbar">
-        <div class="btn" id="edImport">📥 导入课表文件</div>
-        <div class="btn" id="edSnap">📌 存一个快照</div>
-      </div>
-      <div class="edbar">
-        <div class="btn gray" id="edTpl">📄 下载格式模板</div>
-        <div class="btn gray" id="edCopy" style="display:none">📋 复制数据</div>
+        <div class="btn pri" id="edImport">📥 选择课表文件</div>
+        <div class="btn gray" id="edTpl">📄 格式模板</div>
       </div>
       <input type="file" id="edFile" accept=".json,.txt,application/json" style="display:none">
-      <div id="edHistBox"></div>
+      <div id="edInfo"></div>
+
       <div class="edbar">
-        <div class="btn warn" id="edReset">↩️ 恢复出厂课表</div>
+        <div class="btn pri" id="cPush">☁️ 上传到云端</div>
       </div>
-      <div id="editbox"></div></div>
     </div>
   </details>
 
@@ -211,26 +190,30 @@ user-select:none;-webkit-user-select:none;}
 
 <script>
 var DATA = {"school":"罗州城高级中学","title":"2026年秋高一课程总表","periods":["早自习","第1节","第2节","第3节","第4节","第5节","第6节","第7节","第8节","晚1","晚2"],"times":["07:20","08:00","08:55","10:00","10:55","14:00","14:55","16:00","16:55","19:00","20:00"],"dayNames":["星期一","星期二","星期三","星期四","星期五","星期六","星期七","星期八","星期九","星期十","星期十一","星期十二","十三","十四"],"classes":[10,12,13],"grid":{"0_10":["语文","化学","数学","历史","生物","英语","物理","语文","语文","英语","英语"],"0_12":["语文","物理","英语","数学","生物","地理","化学","语文","语文","英语","英语"],"0_13":["语文","英语","语文","生物","物理","化学","数学","历史","政治","英语","英语"],"1_10":["英语","化学","语文","数学","数学","生物","物理","英语","英语","数学","物理"],"1_12":["英语","英语","英语","化学","语文","数学","数学","物理","生物","数学","物理"],"1_13":["英语","数学","数学","语文","化学","物理","生物","英语","英语","物理","数学"],"2_10":["语文","化学","英语","生物","地理","政治","数学","物理","语文","数学","数学"],"2_12":["语文","心理","英语","生物","化学","物理","历史","数学","语文","数学","数学"],"2_13":["语文","英语","化学","地理","生物","语文","语文","数学","物理","数学","数学"],"3_10":["英语","语文","语文","物理","英语","数学","数学","心理","化学","语文","语文"],"3_12":["英语","语文","语文","英语","物理","化学","美术","数学","数学","语文","语文"],"3_13":["英语","数学","数学","物理","英语","语文","语文","化学","心理","语文","语文"],"4_10":["语文","数学","数学","化学","语文","英语","英语","物理","生物","数学","物理"],"4_12":["语文","生物","物理","数学","数学","化学","语文","英语","英语","数学","物理"],"4_13":["语文","英语","英语","数学","数学","语文","化学","物理","生物","物理","数学"],"5_10":["英语","语文","语文","体育","生物","英语","英语","信息技术","历史","生物","生物"],"5_12":["英语","音乐","历史","语文","语文","政治","生物","英语","英语","生物","生物"],"5_13":["英语","英语","英语","生物","体育","美术","历史","语文","语文","生物","生物"],"6_10":["英语","化学","政治","美术","地理","数学","数学","物理","物理","化学","化学"],"6_12":["英语","政治","化学","物理","物理","地理","体育","数学","数学","化学","化学"],"6_13":["英语","数学","数学","信息技术","化学","历史","地理","物理","物理","化学","化学"],"7_10":["英语","语文","语文","数学","数学","英语","英语","物理","音乐","物理","物理"],"7_12":["英语","英语","英语","数学","数学","历史","物理","语文","政治","物理","物理"],"7_13":["英语","音乐","政治","语文","语文","物理","英语","数学","数学","物理","物理"],"8_10":["语文","化学","体育","英语","历史","数学","数学","语文","物理","化学","英语"],"8_12":["语文","语文","化学","数学","数学","英语","物理","体育","地理","化学","英语"],"8_13":["语文","数学","数学","语文","化学","体育","英语","地理","物理","化学","英语"],"9_10":["英语","英语","化学","物理","政治","历史","语文","生物","数学","数学","数学"],"9_12":["英语","化学","物理","英语","生物","信息技术","语文","体育","数学","数学","数学"],"9_13":["英语","生物","英语","化学","物理","语文","生物","数学","政治","数学","数学"],"10_10":["语文","数学","数学","物理","英语","生物","语文","语文","地理","物理","数学"],"10_12":["语文","物理","政治","数学","数学","语文","英语","化学","生物","数学","物理"],"10_13":["语文","语文","语文","历史","化学","英语","物理","数学","数学","物理","数学"],"11_10":["英语","数学","数学","物理","体育","英语","英语","生物","语文","语文","生物"],"11_12":["英语","英语","英语","数学","数学","语文","生物","物理","化学","生物","语文"],"11_13":["英语","物理","生物","数学","数学","英语","语文","化学","体育","语文","生物"],"12_10":["语文","化学","化学","","","","","","","",""],"12_12":["语文","语文","语文","","","","","","","",""],"12_13":["语文","英语","英语","","","","","","","",""],"13_10":["","","","","","","","","","物理","数学"],"13_12":["","","","","","","","","","物理","数学"],"13_13":["","","","","","","","","","数学","物理"]},"anchor":{"date":"2026-09-02","dayIndex":2},"cycle":14};
-var PERIODS = DATA.periods, TIMES = DATA.times, DAYNAMES = DATA.dayNames,
+var PERIODS = DATA.periods, DAYNAMES = DATA.dayNames,
     CLASSES = DATA.classes, ANCHOR = DATA.anchor, CYCLE = DATA.cycle;
 
-/* ===== 可编辑数据层：GRID 是运行时唯一数据源 ===== */
-var LSKEY   = 'jqh_schedule_edit_v1';
-var MAXSNAP = 10;                                     /* 最多保留 10 个历史快照 */
-var GRID0   = JSON.parse(JSON.stringify(DATA.grid));  /* 出厂备份 */
-var GRID    = JSON.parse(JSON.stringify(DATA.grid));  /* 当前课表（显示 + 编辑共用） */
-var STORE   = { v: 2, ts: 0, grid: null, history: [] };
+/* ===== 页面自带的显示修饰（硬编码，不随 schedule.json 变化） ===== */
+var TIMES = ['07:20','08:00','08:55','10:00','10:55','14:00','14:55','16:00','16:55','19:00','20:00'];
+
+/* 化学判定：容忍空格 / 全角空格，也接受简写「化」 */
+function isChem(v){
+  if (!v) return false;
+  var t = String(v).replace(/[\s\u3000]/g, '');
+  return t === '化学' || t === '化';
+}
+
+/* ===== 课表数据 ===== */
+var LSKEY = 'jqh_schedule_v3';
+var GRID0 = JSON.parse(JSON.stringify(DATA.grid));   /* 内置兜底 */
+var GRID  = JSON.parse(JSON.stringify(DATA.grid));
+var STORE = { v: 3, ts: 0, grid: null };
 
 try {
   var _raw = localStorage.getItem(LSKEY);
   if (_raw){
     var _o = JSON.parse(_raw);
-    if (_o && _o.grid){
-      STORE.grid    = _o.grid;
-      STORE.ts      = _o.ts || 0;
-      STORE.history = _o.history || [];
-      GRID          = _o.grid;      /* 用上次保存的课表覆盖 */
-    }
+    if (_o && _o.grid){ STORE.grid = _o.grid; STORE.ts = _o.ts || 0; }
   }
 } catch (e) { /* 微信 X5 打开本地文件时 localStorage 可能抛异常 → 静默降级 */ }
 
@@ -255,7 +238,6 @@ function nowPeriodIdx(){
 }
 
 var cur = ds(new Date());
-var fullCls = CLASSES[0];   /* 完整14天总表当前选中的班（必须跨 render 保持，原来写在 renderFull 局部 → 切班失效） */
 
 function cellOf(di, c, p){
   var row = GRID[di + '_' + c];
@@ -296,8 +278,8 @@ function render(){
     for (var j = 0; j < CLASSES.length; j++){
       var s = cellOf(di, CLASSES[j], p);
       if (s) tot++;
-      if (s === '化学') chem++;
-      h += '<td class="' + (s === '化学' ? 'ch' : 'sub') + '">' + (s ? (s === '化学' ? '🧪' + s : s) : '—') + '</td>';
+      if (isChem(s)) chem++;
+      h += '<td class="' + (isChem(s) ? 'ch' : 'sub') + '">' + (s ? (isChem(s) ? '🧪' + s : s) : '—') + '</td>';
     }
     h += '</tr>';
   }
@@ -373,13 +355,13 @@ function renderFull(di){
        + DAYNAMES[d].replace('星期','') + '</th>';
   }
   h += '</tr>';
-  var curCls = fullCls;
+  var curCls = CLASSES[0];
   for (var p = 0; p < PERIODS.length; p++){
     h += '<tr><td class="pd" style="font-size:11.5px">' + PERIODS[p] + '</td>';
     for (var d2 = 0; d2 < CYCLE; d2++){
       var s = cellOf(d2, curCls, p);
       var st = d2 === di ? ' style="background:#F7F8FF"' : '';
-      h += '<td class="' + (s === '化学' ? 'ch' : 'sub') + '"' + st + '>' + (s || '·') + '</td>';
+      h += '<td class="' + (isChem(s) ? 'ch' : 'sub') + '"' + st + '>' + (s || '·') + '</td>';
     }
     h += '</tr>';
   }
@@ -391,19 +373,17 @@ function renderFull(di){
   }
   h += '</div>';
   var el = document.getElementById('full');
-  var _sl = el.scrollLeft;
   el.innerHTML = h;
-  el.scrollLeft = _sl;
   var bs = el.getElementsByTagName('div');
   for (var b = 0; b < bs.length; b++){
     if (!bs[b].getAttribute('data-c')) continue;
     (function(btn){
-      btn.onclick = function(){ fullCls = parseInt(btn.getAttribute('data-c'), 10); render(); };
+      btn.onclick = function(){ curCls = parseInt(btn.getAttribute('data-c'), 10); render(); };
     })(bs[b]);
   }
 }
 
-// 日期选择器（范围不够时自动以当前日期为中心重建，避免翻出去变成空白）
+// 日期选择器（范围不够时自动以当前日期为中心重建，避免翻出去变空白）
 var selCenter = null;
 function buildSel(centerDate){
   var el = document.getElementById('pick'), h = '';
@@ -430,265 +410,7 @@ document.getElementById('next').onclick = function(){ cur = ds(addDays(parseD(cu
 document.getElementById('today').onclick = function(){ cur = ds(new Date()); calMonth = null; syncSel(); render(); };
 document.getElementById('pick').onchange = function(){ cur = this.value; render(); };
 
-render();
-
-/* ==================== 编辑 / 自动保存 / 历史快照 ==================== */
-function cloneGrid(g){ return JSON.parse(JSON.stringify(g)); }
-
-var SUBJECTS = (function(){
-  var base = ['语文','数学','英语','物理','化学','生物','政治','历史','地理',
-              '体育','音乐','美术','信息技术','心理'];
-  var seen = {}, i, k, row;
-  for (i = 0; i < base.length; i++) seen[base[i]] = 1;
-  for (k in GRID){ row = GRID[k] || []; for (i = 0; i < row.length; i++){ if (row[i]) seen[row[i]] = 1; } }
-  var arr = [];
-  for (var sx in seen) arr.push(sx);
-  return arr;
-})();
-
-var storeOK = true;   /* 本机存储是否可用 */
-
-function saveStore(){
-  STORE.grid = GRID;
-  STORE.ts   = new Date().getTime();
-  try { localStorage.setItem(LSKEY, JSON.stringify(STORE)); storeOK = true; return true; }
-  catch (e) { storeOK = false; return false; }
-}
-
-function fmtTime(ts){
-  var d = new Date(ts);
-  return pad(d.getMonth()+1) + '/' + pad(d.getDate()) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
-}
-function relTime(ts){
-  var s2 = Math.floor((new Date().getTime() - ts) / 1000);
-  if (s2 < 45) return '刚刚';
-  if (s2 < 3600) return Math.floor(s2/60) + ' 分钟前';
-  if (s2 < 86400) return Math.floor(s2/3600) + ' 小时前';
-  return Math.floor(s2/86400) + ' 天前';
-}
-
-function setTip(){
-  var el = document.getElementById('edtip');
-  if (!el) return;
-  if (storeOK){
-    var n = new Date();
-    el.textContent = '✔ 已自动保存 · ' + pad(n.getHours()) + ':' + pad(n.getMinutes()) + '（存在这台设备上）';
-    el.style.color = '#16A34A';
-  } else {
-    el.textContent = '⚠️ 本机存储不可用（微信内直接打开本地文件时常见）——改动仅在本次打开期间有效';
-    el.style.color = '#D97706';
-    var cb = document.getElementById('edCopy');
-    if (cb) cb.style.display = '';
-  }
-}
-
-/* ---------- 历史快照 ---------- */
-function pushSnapshot(label){
-  var g = cloneGrid(GRID);
-  var top = STORE.history[0];
-  if (top && JSON.stringify(top.grid) === JSON.stringify(g)) return false;  /* 与最新快照相同，不重复存 */
-  STORE.history.unshift({
-    id: new Date().getTime() + '_' + Math.floor(Math.random()*1000),
-    ts: new Date().getTime(), label: label, grid: g
-  });
-  while (STORE.history.length > MAXSNAP) STORE.history.pop();   /* 超出上限丢最旧 */
-  try { localStorage.setItem(LSKEY, JSON.stringify(STORE)); } catch (e) { storeOK = false; }
-  return true;
-}
-
-function renderHistory(){
-  var box = document.getElementById('edHistBox');
-  if (!box) return;
-  if (!STORE.history.length){
-    box.innerHTML = '<div class="hbox"><div class="edempty">'
-      + '还没有历史版本。<br>点「📌 存一个快照」给当前课表盖个章，以后随时能回到这一版。'
-      + '</div></div>';
-    return;
-  }
-  var h = '<div class="hbox">';
-  for (var i = 0; i < STORE.history.length; i++){
-    var it = STORE.history[i];
-    var auto = (it.label || '').indexOf('自动') === 0;
-    h += '<div class="hitem">'
-       +   '<div class="hmeta"><b>' + (it.label || '快照')
-       +     (auto ? '<span class="autotag">自动</span>' : '') + '</b>'
-       +     '<span>' + fmtTime(it.ts) + ' · ' + relTime(it.ts) + '</span></div>'
-       +   '<div class="hact">'
-       +     '<div class="hbtn go" data-id="' + it.id + '">恢复</div>'
-       +     '<div class="hbtn del" data-id="' + it.id + '">删除</div>'
-       +   '</div>'
-       + '</div>';
-  }
-  h += '</div>';
-  box.innerHTML = h;
-  var bs = box.getElementsByTagName('div');
-  for (var b = 0; b < bs.length; b++){
-    var id = bs[b].getAttribute('data-id');
-    if (!id) continue;
-    (function(el, sid, isDel){
-      el.onclick = function(){ isDel ? delSnapshot(sid) : applySnapshot(sid); };
-    })(bs[b], id, bs[b].className.indexOf('del') > -1);
-  }
-}
-
-function applySnapshot(id){
-  var it = null, i;
-  for (i = 0; i < STORE.history.length; i++){ if (String(STORE.history[i].id) === String(id)) it = STORE.history[i]; }
-  if (!it) return;
-  if (!confirm('恢复到「' + fmtTime(it.ts) + ' · ' + relTime(it.ts) + '」这一版课表？\n\n放心：当前课表会先自动存成一个快照，不会丢。')) return;
-  pushSnapshot('自动·恢复前');
-  GRID = cloneGrid(it.grid);
-  saveStore();
-  setTip();
-  render();
-  if (edRendered){ renderEdit(); }
-  renderHistWrap();
-}
-
-function delSnapshot(id){
-  if (!confirm('删除这条历史版本？删除后无法找回。')) return;
-  for (var i = 0; i < STORE.history.length; i++){
-    if (String(STORE.history[i].id) === String(id)){ STORE.history.splice(i, 1); break; }
-  }
-  try { localStorage.setItem(LSKEY, JSON.stringify(STORE)); } catch (e) {}
-  renderHistWrap();
-}
-
-function renderHistWrap(){ renderHistory(); }
-
-/* ---------- 编辑区 ---------- */
-function optHTML(val){
-  var list = SUBJECTS.slice();
-  if (val && list.indexOf(val) < 0) list.push(val);
-  var h = '<option value="">—</option>';
-  for (var i = 0; i < list.length; i++){
-    h += '<option value="' + list[i] + '"' + (list[i] === val ? ' selected' : '') + '>' + list[i] + '</option>';
-  }
-  h += '<option value="__custom__">自定义…</option>';
-  return h;
-}
-
-var edRendered = false;
-function renderEdit(){
-  var box = document.getElementById('editbox');
-  if (!box) return;
-  var h = '', d, p, j;
-  for (d = 0; d < CYCLE; d++){
-    h += '<div class="ecard"><div class="ehd">' + DAYNAMES[d]
-       + '<span>大周第 ' + (d + 1) + ' 天</span></div>';
-    h += '<div class="scroll"><table class="etb"><tr><th>时段</th>';
-    for (j = 0; j < CLASSES.length; j++) h += '<th class="c">' + CLASSES[j] + '班</th>';
-    h += '</tr>';
-    for (p = 0; p < PERIODS.length; p++){
-      h += '<tr><td class="pd">' + PERIODS[p] + '</td>';
-      for (j = 0; j < CLASSES.length; j++){
-        var c = CLASSES[j], k = d + '_' + c;
-        var val = (GRID[k] && GRID[k][p]) ? GRID[k][p] : '';
-        h += '<td><select class="esel' + (val === '化学' ? ' chem' : '') + '"'
-           + ' data-d="' + d + '" data-c="' + c + '" data-p="' + p + '">'
-           + optHTML(val) + '</select></td>';
-      }
-      h += '</tr>';
-    }
-    h += '</table></div></div>';
-  }
-  box.innerHTML = h;
-  edRendered = true;
-}
-
-/* 编辑区懒渲染：展开时才生成（首屏更快，X5 也不卡） */
-(function(){
-  var det = document.getElementById('editDet');
-  if (!det) return;
-  var sm = det.getElementsByTagName('summary')[0];
-  if (!sm) return;
-  sm.onclick = function(){
-    setTimeout(function(){ if (det.open && !edRendered) renderEdit(); }, 0);
-  };
-  if (det.open && !edRendered) renderEdit();
-})();
-
-/* 改一个格子：存值 → 自动保存 → 主视图同步（不重建编辑区，避免滚动跳位） */
-(function(){
-  var box = document.getElementById('editbox');
-  if (!box) return;
-  box.addEventListener('change', function(e){
-    var t = e.target;
-    if (!t || t.tagName !== 'SELECT') return;
-    var d = parseInt(t.getAttribute('data-d'), 10),
-        c = parseInt(t.getAttribute('data-c'), 10),
-        p = parseInt(t.getAttribute('data-p'), 10),
-        v = t.value, k = d + '_' + c, rebuild = false;
-
-    if (v === '__custom__'){
-      var nv = prompt('输入科目名称（留空 = 清空该格）：', '');
-      if (nv === null){ t.value = (GRID[k] && GRID[k][p]) ? GRID[k][p] : ''; return; }
-      v = (nv || '').replace(/^\s+|\s+$/g, '');
-      if (v && SUBJECTS.indexOf(v) < 0) SUBJECTS.push(v);
-      rebuild = true;
-    }
-    if (!GRID[k]) GRID[k] = ['','','','','','','','','','',''];
-    GRID[k][p] = v;
-    if (rebuild){ t.innerHTML = optHTML(v); t.value = v; }
-    t.className = 'esel' + (v === '化学' ? ' chem' : '');
-    saveStore();        /* 自动保存 */
-    setTip();
-    render();           /* 上面的课表同步更新 */
-  }, false);
-})();
-
-document.getElementById('edSnap').onclick = function(){
-  var added = pushSnapshot('手动存档');
-  setTip();
-  renderHistWrap();
-  alert(added
-    ? '✅ 已存下一个快照。\n\n以后点「恢复」就能回到这一版课表。'
-    : '当前课表跟最新快照一模一样，不用重复存啦。');
-};
-
-document.getElementById('edReset').onclick = function(){
-  if (!confirm('恢复到原始课表（出厂版本）？\n\n当前课表会先自动存成一个快照，不会丢。')) return;
-  pushSnapshot('自动·恢复出厂前');
-  GRID = cloneGrid(GRID0);
-  saveStore();
-  setTip();
-  render();
-  if (edRendered) renderEdit();
-  renderHistWrap();
-};
-
-document.getElementById('edCopy').onclick = function(){
-  var nd = JSON.parse(JSON.stringify(DATA)); nd.grid = GRID;
-  var txt = JSON.stringify(nd);
-  if (navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(txt).then(
-      function(){ alert('✅ 数据已复制到剪贴板，粘贴到记事本存好。'); },
-      function(){ alert('复制失败，请长按选择文本手动复制。'); });
-  } else {
-    alert('当前浏览器不支持一键复制。');
-  }
-};
-
-/* 打开页面时：把「上次保存的课表」自动留成一个历史版本 —— 这样历史里天然有"上几次" */
-(function(){
-  if (!STORE.grid) return;
-  var top = STORE.history[0];
-  if (!top || JSON.stringify(top.grid) !== JSON.stringify(STORE.grid)){
-    STORE.history.unshift({
-      id: new Date().getTime() + '_auto',
-      ts: STORE.ts || new Date().getTime(),
-      label: '自动·上次的课表',
-      grid: cloneGrid(STORE.grid)
-    });
-    while (STORE.history.length > MAXSNAP) STORE.history.pop();
-    try { localStorage.setItem(LSKEY, JSON.stringify(STORE)); } catch (e) {}
-  }
-})();
-
-setTip();
-renderHistWrap();
-
-/* ==================== 云同步（GitHub） ==================== */
+/* ==================== 云同步配置 ==================== */
 var CFGKEY = 'jqh_gh_cfg_v1';
 var CFG = { owner: '', repo: '', branch: 'main', path: 'schedule.json', token: '' };
 try {
@@ -699,11 +421,28 @@ try {
 function cfgReady(){ return !!(CFG.owner && CFG.repo && CFG.token); }
 function canFetch(){ return typeof fetch === 'function'; }
 
+/* 管理员：本机配过 Token，或网址带 #admin */
+function isAdmin(){
+  if (cfgReady()) return true;
+  return (location.hash || '').replace('#', '').toLowerCase() === 'admin';
+}
+function refreshAdminUI(){
+  var el = document.getElementById('adminDet');
+  if (!el) return;
+  el.style.display = isAdmin() ? '' : 'none';
+}
+
 function ctip(msg, color){
   var el = document.getElementById('ctip');
   if (!el) return;
   el.textContent = msg;
   el.style.color = color || '#4F46E5';
+}
+function einfo(msg, kind){
+  var el = document.getElementById('edInfo');
+  if (!el) return;
+  el.className = kind || '';
+  el.textContent = msg || '';
 }
 function syncCfgUI(){
   var map = { fOwner: CFG.owner, fRepo: CFG.repo, fBranch: CFG.branch, fPath: CFG.path, fToken: CFG.token };
@@ -712,33 +451,32 @@ function syncCfgUI(){
 function cfgTip(){
   ctip(cfgReady()
     ? ('☁️ 云同步就绪：' + CFG.owner + '/' + CFG.repo + ' · ' + CFG.path + ' · 分支 ' + CFG.branch)
-    : '☁️ 还没设置云同步。点「⚙️ 设置」填一次，以后改完一键上传，手机微信 / QQ 就能看到。');
+    : '☁️ 还没配置。点「⚙️ 云同步设置」填一次（仓库 + Token），以后就不用再填了。');
 }
 
 function utf8b64(str){ return btoa(unescape(encodeURIComponent(str))); }
 function buildCloudJSON(){
-  var nd = JSON.parse(JSON.stringify(DATA));
-  nd.grid = GRID;
-  nd.v = 1;
-  nd.updated = new Date().toISOString();
+  var nd = { v: 1, updated: new Date().toISOString(), cycle: CYCLE, anchor: ANCHOR,
+             classes: CLASSES, periods: PERIODS, grid: GRID };
   return nd;
 }
 
+/* ---------- 上传到云端 ---------- */
 function cloudPush(){
   if (!cfgReady()){
     document.getElementById('cPanel').className = 'cpanel on';
-    alert('先点「⚙️ 设置」，把仓库名和 Token 填好（只需做一次）。');
+    alert('先点「⚙️ 云同步设置」把仓库和 Token 填好（只需做一次）。');
     return;
   }
-  if (!canFetch()){ alert('这个浏览器不支持联网上传，请用「📋 复制数据」手动提交。'); return; }
-  ctip('⏳ 正在同步到云端…', '#D97706');
+  if (!canFetch()){ alert('这个浏览器不支持联网上传，请换 Chrome / Edge 试试。'); return; }
+  ctip('⏳ 正在上传到云端…', '#D97706');
   var api = 'https://api.github.com/repos/' + CFG.owner + '/' + CFG.repo + '/contents/' + CFG.path;
   var H = { 'Authorization': 'Bearer ' + CFG.token, 'Accept': 'application/vnd.github+json' };
   fetch(api + '?ref=' + encodeURIComponent(CFG.branch), { headers: H, cache: 'no-store' })
     .then(function(r){
       if (r.status === 404) return null;
       if (r.status === 401) throw new Error('Token 无效或已过期（401）');
-      if (r.status === 403) throw new Error('Token 权限不够（403）—— 需要 Contents: Read and write');
+      if (r.status === 403) throw new Error('Token 权限不够（403）—— classic 要勾 repo，fine-grained 要 Contents: Read and write');
       if (!r.ok) throw new Error('读取云端失败 HTTP ' + r.status);
       return r.json();
     })
@@ -753,37 +491,41 @@ function cloudPush(){
     })
     .then(function(r){
       if (r.ok) return r.json();
-      var extra = (r.status === 422) ? '（多半是分支名写错，或刚有别人改过，重试一次）' : '';
+      var extra = (r.status === 422) ? '（多半是分支名写错了，或刚才有别人改过，重试一次）' : '';
       throw new Error('提交失败 HTTP ' + r.status + extra);
     })
     .then(function(){
-      ctip('✅ 已同步到云端 · ' + new Date().toTimeString().slice(0, 5), '#16A34A');
-      alert('✅ 已提交到 GitHub！\n\n手机微信 / QQ 刷新链接就能看到新课表。\n（GitHub Pages 有 1~10 分钟缓存，稍等一下下）');
+      var t = new Date().toTimeString().slice(0, 5);
+      ctip('✅ 上传成功 · ' + t, '#16A34A');
+      einfo('✅ 已在 ' + t + ' 上传成功。别人刷新网址就能看到新课表（GitHub 有 1~10 分钟缓存）。', '');
+      alert('✅ 已上传到 GitHub！\n\n所有打开这个网址的人刷新后就能看到新课表。\n（GitHub Pages 有 1~10 分钟缓存，稍等一下下）');
     })
     .catch(function(err){
       ctip('❌ ' + err.message, '#B91C1C');
-      var cb = document.getElementById('edCopy');
-      if (cb) cb.style.display = '';
-      alert('同步失败：' + err.message + '\n\n放心，修改已经存到本机，不会丢。\n稍后可重试，或用「📋 复制数据」手动提交。');
+      einfo('❌ 上传失败：' + err.message + '\n你导入的课表还在页面上，可以稍后重试。', 'err');
+      alert('上传失败：' + err.message + '\n\n课表还在页面上，可以稍后重试。');
     });
 }
 
-/* 打开页面时读云端最新课表（同源，无需 token；file:// 下自动跳过） */
+/* ---------- 打开页面：拉云端最新课表 ---------- */
 function cloudPull(){
   if (!canFetch()) return;
-  if (location.protocol.indexOf('http') !== 0) return;
+  if (location.protocol.indexOf('http') !== 0) return;   /* file:// 下跳过 */
   fetch('./' + CFG.path + '?t=' + new Date().getTime(), { cache: 'no-store' })
     .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(function(j){
-      if (!(j && j.grid)) throw new Error('格式不对');
-      if (JSON.stringify(j.grid) !== JSON.stringify(GRID)){
-        pushSnapshot('自动·云同步前');          /* 先把本机版本存进历史，绝不丢 */
-        GRID = j.grid;
-        saveStore();
+      var cloud = (j && j.grid) ? j.grid : j;
+      if (!cloud || typeof cloud !== 'object' || !cloud['0_' + CLASSES[0]]) throw new Error('格式不对');
+      /* 管理员本机有未上传的草稿 → 保留草稿，别被云端冲掉 */
+      if (isAdmin() && STORE.grid && JSON.stringify(STORE.grid) !== JSON.stringify(cloud)){
+        ctip('☁️ 云端有新版本，但你本机有未上传的课表 —— 已保留本机版本。点「☁️ 上传到云端」可覆盖云端。', '#D97706');
+        return;
+      }
+      if (JSON.stringify(cloud) !== JSON.stringify(GRID)){
+        GRID = cloud;
+        try { localStorage.setItem(LSKEY, JSON.stringify({ v: 3, ts: new Date().getTime(), grid: GRID })); } catch (e) {}
         render();
-        if (edRendered) renderEdit();
-        renderHistWrap();
-        ctip('☁️ 已载入云端课表（本机原版本已存进历史）', '#16A34A');
+        ctip('☁️ 已同步云端最新课表', '#16A34A');
       } else {
         ctip('☁️ 云端与本机一致', '#16A34A');
       }
@@ -791,37 +533,18 @@ function cloudPull(){
     .catch(function(){ cfgTip(); });
 }
 
-document.getElementById('cCfg').onclick = function(){
-  var p = document.getElementById('cPanel');
-  p.className = (p.className.indexOf('on') > -1) ? 'cpanel' : 'cpanel on';
-  if (p.className.indexOf('on') > -1) syncCfgUI();
-};
-document.getElementById('fSave').onclick = function(){
-  CFG.owner  = (document.getElementById('fOwner').value  || '').replace(/^\s+|\s+$/g, '');
-  CFG.repo   = (document.getElementById('fRepo').value   || '').replace(/^\s+|\s+$/g, '');
-  CFG.branch = (document.getElementById('fBranch').value || '').replace(/^\s+|\s+$/g, '') || 'main';
-  CFG.path   = (document.getElementById('fPath').value   || '').replace(/^\s+|\s+$/g, '') || 'schedule.json';
-  CFG.token  = (document.getElementById('fToken').value  || '').replace(/^\s+|\s+$/g, '');
-  try { localStorage.setItem(CFGKEY, JSON.stringify(CFG)); cfgTip(); alert('✅ 设置已保存到本机。'); }
-  catch (e) { alert('⚠️ 本机存储不可用，设置只在本次打开期间有效。'); }
-};
-document.getElementById('fClear').onclick = function(){
-  if (!confirm('清除云同步设置？（Token 会从本机删除，课表数据不动）')) return;
-  CFG = { owner: '', repo: '', branch: 'main', path: 'schedule.json', token: '' };
-  try { localStorage.removeItem(CFGKEY); } catch (e) {}
-  syncCfgUI(); cfgTip();
-  alert('已清除。');
-};
-document.getElementById('cPush').onclick = cloudPush;
-
-syncCfgUI();
-cfgTip();
-cloudPull();
-
 /* ==================== 导入课表文件 ==================== */
 function importHint(){
   return '键名格式：「大周第几天_班号」，例如 "0_10" = 大周第 1 天的 10 班（天数 0~' + (CYCLE - 1) + '）。\n'
-       + '每个键的值必须是 ' + PERIODS.length + ' 项的数组，顺序：' + PERIODS.join(' / ');
+       + '每个键的值必须是 ' + PERIODS.length + ' 项的数组，顺序：' + PERIODS.join(' / ') + '。\n'
+       + '科目写「化学」会自动紫色高亮。';
+}
+
+function pickGrid(obj){
+  if (!obj || typeof obj !== 'object') return null;
+  if (obj.grid && typeof obj.grid === 'object') return obj.grid;
+  if (obj.schedule && typeof obj.schedule === 'object') return obj.schedule;
+  return obj;
 }
 
 function validateGrid(g){
@@ -842,7 +565,7 @@ function validateGrid(g){
     if (row.length !== PERIODS.length)
       return { ok: false, msg: '「' + k + '」有 ' + row.length + ' 项，要求正好 ' + PERIODS.length + ' 项。\n' + importHint() };
     var rr = [];
-    for (j = 0; j < row.length; j++) rr.push(row[j] == null ? '' : String(row[j]));
+    for (j = 0; j < row.length; j++) rr.push(row[j] == null ? '' : String(row[j]).replace(/^\s+|\s+$/g, ''));
     out[k] = rr;
   }
   for (i = 0; i < CLASSES.length; i++){
@@ -856,31 +579,30 @@ function validateGrid(g){
   return { ok: true, grid: out };
 }
 
-function applyImported(g, srcName){
-  pushSnapshot('自动·导入前');       /* 先保住当前版本，导错了能回退 */
-  GRID = g;
-  saveStore();
-  setTip();
-  render();
-  if (edRendered) renderEdit();
-  renderHistWrap();
-  alert('✅ 导入成功！\n\n' + (srcName ? srcName + '\n' : '')
-      + '已应用 ' + CYCLE + ' 天 × ' + CLASSES.length + ' 个班的课表。\n'
-      + '导入前的版本已存进「历史记录」，随时能回退。');
-}
-
 function importText(txt, name){
   var obj = null;
   try { obj = JSON.parse(txt); }
   catch (e) {
-    alert('❌ 导入失败：不是合法的 JSON 文件。\n\n' + e.message + '\n\n点「📄 下载格式模板」可以看到正确格式。');
+    var m1 = '❌ 不是合法的 JSON 文件：' + e.message;
+    einfo(m1, 'err');
+    alert('❌ 导入失败：不是合法的 JSON 文件。\n\n' + e.message + '\n\n点「📄 格式模板」可以看到正确格式。');
     return;
   }
-  var g = (obj && obj.grid) ? obj.grid : obj;
-  if (typeof g === 'string'){ try { g = JSON.parse(g); } catch (e2) { g = null; } }
-  var v = validateGrid(g);
-  if (!v.ok){ alert('❌ 导入失败\n\n' + v.msg); return; }
-  applyImported(v.grid, name || '课表文件');
+  var v = validateGrid(pickGrid(obj));
+  if (!v.ok){
+    einfo('❌ ' + v.msg, 'err');
+    alert('❌ 导入失败\n\n' + v.msg);
+    return;
+  }
+  GRID = v.grid;
+  try { localStorage.setItem(LSKEY, JSON.stringify({ v: 3, ts: new Date().getTime(), grid: GRID })); } catch (e2) {}
+  render();
+  var chemN = 0;
+  for (var k in GRID){ for (var p = 0; p < GRID[k].length; p++){ if (isChem(GRID[k][p])) chemN++; } }
+  einfo('📥 已载入：' + (name || '课表文件') + '\n'
+      + '共 ' + CYCLE + ' 天 × ' + CLASSES.length + ' 个班，识别到 ' + chemN + ' 节化学课。\n'
+      + '确认没问题后，点下面的「☁️ 上传到云端」发布出去。', '');
+  alert('✅ 已载入课表！\n\n' + (name ? name + '\n' : '') + '页面上的课表已经更新。\n确认没问题后，点「☁️ 上传到云端」发布。');
 }
 
 document.getElementById('edImport').onclick = function(){
@@ -897,11 +619,8 @@ document.getElementById('edFile').onchange = function(){
   fr.readAsText(f, 'utf-8');
 };
 document.getElementById('edTpl').onclick = function(){
-  var tpl = {
-    v: 1,
-    note: 'grid 的键 = 大周第几天(0~' + (CYCLE - 1) + ')_班号；值 = ' + PERIODS.length + ' 个科目（' + PERIODS.join('/') + '）',
-    grid: {}
-  };
+  var tpl = { v: 1, note: 'grid 的键 = 大周第几天(0~' + (CYCLE - 1) + ')_班号；值 = ' + PERIODS.length + ' 个科目（' + PERIODS.join('/') + '）',
+              grid: {} };
   for (var d = 0; d < CYCLE; d++){
     for (var ci = 0; ci < CLASSES.length; ci++){
       var empty = [];
@@ -917,11 +636,45 @@ document.getElementById('edTpl').onclick = function(){
     a.href = url; a.download = '课表模板.json';
     document.body.appendChild(a); a.click();
     setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(url); }, 800);
-    alert('📄 已下载「课表模板.json」。\n\n按顺序填好每格 ' + PERIODS.length + ' 个科目，再用「📥 导入课表文件」导进来。');
+    alert('📄 已下载「课表模板.json」。\n\n按顺序填好每格 ' + PERIODS.length + ' 个科目，再用「📥 选择课表文件」载入。');
   } catch (e) {
-    alert('下载失败。格式要求：\n\n' + tpl.note);
+    alert('下载失败。格式要求：\n\n' + (tpl.grid['0_' + CLASSES[0]] ? '' : '') + importHint());
   }
 };
+
+/* ==================== 设置面板交互 ==================== */
+document.getElementById('cCfg').onclick = function(){
+  var p = document.getElementById('cPanel');
+  p.className = (p.className.indexOf('on') > -1) ? 'cpanel' : 'cpanel on';
+  if (p.className.indexOf('on') > -1) syncCfgUI();
+};
+document.getElementById('fSave').onclick = function(){
+  CFG.owner  = (document.getElementById('fOwner').value  || '').replace(/^\s+|\s+$/g, '');
+  CFG.repo   = (document.getElementById('fRepo').value   || '').replace(/^\s+|\s+$/g, '');
+  CFG.branch = (document.getElementById('fBranch').value || '').replace(/^\s+|\s+$/g, '') || 'main';
+  CFG.path   = (document.getElementById('fPath').value   || '').replace(/^\s+|\s+$/g, '') || 'schedule.json';
+  CFG.token  = (document.getElementById('fToken').value  || '').replace(/^\s+|\s+$/g, '');
+  try { localStorage.setItem(CFGKEY, JSON.stringify(CFG)); cfgTip(); refreshAdminUI(); alert('✅ 设置已保存到本机。'); }
+  catch (e) { alert('⚠️ 本机存储不可用，设置只在本次打开期间有效。'); }
+};
+document.getElementById('fClear').onclick = function(){
+  if (!confirm('清除云同步设置？（Token 会从本机删除，课表数据不动）')) return;
+  CFG = { owner: '', repo: '', branch: 'main', path: 'schedule.json', token: '' };
+  try { localStorage.removeItem(CFGKEY); } catch (e) {}
+  syncCfgUI(); cfgTip(); refreshAdminUI();
+  alert('已清除。');
+};
+document.getElementById('cPush').onclick = cloudPush;
+window.onhashchange = refreshAdminUI;
+
+/* ---------- 初始化 ---------- */
+/* 管理设备上恢复草稿；普通访客不恢复（云端为准） */
+refreshAdminUI();
+if (isAdmin() && STORE.grid) GRID = STORE.grid;
+syncCfgUI();
+cfgTip();
+render();
+cloudPull();
 
 // 轻量定时：只刷时钟 + 当前时段高亮，不重绘整表（避免展开的总表丢失滚动位置）
 var lastDay = ds(new Date());
